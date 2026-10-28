@@ -1,4 +1,50 @@
 <!doctype html>
-<html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mate XI — Spațiul tău de învățare</title><style>
-:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:#e8edf8;background:#0b1020}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% 0%,#192a51 0%,transparent 42%),#0b1020}.shell{max-width:1120px;margin:auto;padding:30px 26px}.top{display:flex;align-items:center;justify-content:space-between;padding:4px 0 72px}.brand{display:flex;gap:12px;align-items:center;font-weight:800;font-size:20px;letter-spacing:-.6px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#8178ff,#4bc7d5);display:grid;place-items:center;color:white;font-size:23px}.tag{font-size:12px;color:#aab7d4;border:1px solid #34415c;border-radius:20px;padding:8px 12px}.eyebrow{color:#9b9bff;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.08;letter-spacing:-2px;margin:16px 0}.hero h1 span{color:#aaa5ff}.hero p{color:#a4b0c9;font-size:17px;line-height:1.7;max-width:600px}.tabs{display:flex;gap:10px;border-bottom:1px solid #29354e;margin-top:48px}.tab{appearance:none;background:transparent;color:#a4b0c9;border:0;padding:18px 22px;cursor:pointer;font:600 15px inherit;font-weight:650;border-bottom:3px solid transparent}.tab[aria-selected=true]{color:#fff;border-bottom-color:#9c94ff}.tab:hover{color:#fff}.panel{margin-top:26px;border:1px solid #2c3854;background:linear-gradient(145deg,#18233a,#111a2d);border-radius:22px;min-height:350px;display:flex;align-items:center;justify-content:center;text-align:center;padding:32px}.empty-icon{width:68px;height:68px;display:grid;place-items:center;margin:0 auto 22px;border:1px solid #414d76;background:#252b50;border-radius:19px;font-size:30px}.panel h2{font-size:24px;letter-spacing:-.5px;margin:0 0 10px}.panel p{color:#9eabc4;max-width:400px;line-height:1.65;margin:0 auto}.soon{display:inline-block;margin-top:24px;background:#29324f;color:#c3c1ff;border:1px solid #444b75;border-radius:100px;padding:8px 14px;font-size:12px;font-weight:700}.foot{display:flex;justify-content:space-between;color:#6f7e9c;font-size:13px;margin-top:34px;gap:15px}@media(max-width:600px){.shell{padding:20px}.top{padding-bottom:55px}.hero h1{letter-spacing:-1px}.tabs{margin-top:35px}.tab{flex:1;padding:16px 6px;font-size:13px}.panel{min-height:330px}.foot{flex-direction:column}}
-</style></head><body><main class="shell"><header class="top"><div class="brand"><div class="logo">∑</div><span>Mate<span style="color:#a8a3ff">XI</span></span></div><div class="tag">Clasa a XI-a · M1</div></header><section class="hero"><div class="eyebrow">Spațiul vostru de învățare</div><h1>Matematica, <span>mai simplă.</span></h1><p>Un singur loc pentru a înțelege teoria și a găsi ajutor la probleme. Creat pentru tine și colegii tăi.</p></section><nav class="tabs" role="tablist" aria-label="Secțiuni"><button class="tab" role="tab" id="tab-theory" aria-controls="panel" aria-selected="true" data-tab="theory">▤ &nbsp; Teorie</button><button class="tab" role="tab" id="tab-help" aria-controls="panel" aria-selected="false" data-tab="help">◇ &nbsp; Ajutor la probleme</button></nav><section class="panel" id="panel" role="tabpanel" aria-labelledby="tab-theory"><div><div class="empty-icon" id="panel-icon">▤</div><h2 id="panel-title">Teorie</h2><p id="panel-desc">Aici vor apărea lecțiile, conceptele și explicațiile pentru materia de clasa a XI-a.</p><div class="soon">În curând</div></div></section><footer class="foot"><span>© MateXI · Creat pentru învățare</span><span>Un pas înainte, împreună.</span></footer></main><script>const tabs=document.querySelectorAll('.tab');const content={theory:['▤','Teorie','Aici vor apărea lecțiile, conceptele și explicațiile pentru materia de clasa a XI-a.'],help:['◇','Ajutor la probleme','Aici vei putea găsi sprijin pentru rezolvarea problemelor, pas cu pas.']};tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.setAttribute('aria-selected',String(t===tab)));const [icon,title,desc]=content[tab.dataset.tab];document.getElementById('panel-icon').textContent=icon;document.getElementById('panel-title').textContent=title;document.getElementById('panel-desc').textContent=desc;document.getElementById('panel').setAttribute('aria-labelledby',tab.id)}));</script></body></html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mate XI — Spațiul tău de învățare</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">∑</div>
+        <span>Mate<span style="color: #a8a3ff">XI</span></span>
+      </div>
+      <div class="tag">Clasa a XI-a · M1</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Spațiul vostru de învățare</div>
+      <h1>Matematica, <span>mai simplă.</span></h1>
+      <p>Un singur loc pentru a înțelege teoria și a găsi ajutor la probleme. Creat pentru tine și colegii tăi.</p>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="Secțiuni">
+      <button class="tab" role="tab" id="tab-theory" aria-controls="panel" aria-selected="true" data-tab="theory">
+        ▤ &nbsp; Teorie
+      </button>
+      <button class="tab" role="tab" id="tab-help" aria-controls="panel" aria-selected="false" data-tab="help">
+        ◇ &nbsp; Ajutor la probleme
+      </button>
+    </nav>
+
+    <section class="panel" id="panel" role="tabpanel" aria-labelledby="tab-theory">
+      <div>
+        <div class="empty-icon" id="panel-icon">▤</div>
+        <h2 id="panel-title">Teorie</h2>
+        <p id="panel-desc">Aici vor apărea lecțiile, conceptele și explicațiile pentru materia de clasa a XI-a.</p>
+        <div class="soon">În curând</div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© MateXI · Creat pentru învățare</span>
+      <span>Un pas înainte, împreună.</span>
+    </footer>
+  </main>
+</body>
+</html>
